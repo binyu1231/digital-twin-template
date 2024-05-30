@@ -1,13 +1,18 @@
 <script lang="ts" setup>
 import { defineOptions } from 'vue'
 import { barMultipleRenderer, pieRingRenderer } from '../../charts'
-import { getVisitors } from '../../api'
+import { getVisitorDetail, getVisitors } from '../../api'
 defineOptions({ name: 'demo-warning' })
 
 const visitors = ref<any[]>([])
-
+const person = ref({})
 onMounted(async () => {
+  // getVisitors().then((v) => {
+  //   visitors.value = v
+  // })
   visitors.value = await getVisitors()
+  person.value = await getVisitorDetail('x')
+  
 })
 </script>
 
@@ -54,7 +59,7 @@ onMounted(async () => {
     </Card>
     <Card class="left-[96.6rem] top-[4.8rem] w-[22.6rem] h-[61.1rem]">
       <div class="absolute inset-4  top-9">
-        <DecoGrad />
+        <DecoGrid />
       </div>
       <ColTitle>
         应急测试001
@@ -104,15 +109,15 @@ onMounted(async () => {
         class="px-2 py-1"
         :items="visitors"
       >
-        <template v-slot="d">
-          <OrderListItem :order="d.index + 1" :odd="d.isOdd">
+        <template v-slot="{ item, index, isOdd }">
+          <OrderListItem :order="index + 1" :odd="isOdd">
             <div class="pr-2 text-sm text-nowrap">
               <div class="flex justify-between items-center">
-                <span class="text-sky-300">{{ d.item.name }}</span> 
-                <span class="text-orange-200">{{ d.item.website }}</span>
+                <span class="text-sky-300">{{ item.name }}</span> 
+                <span class="text-orange-200">{{ item.website }}</span>
               </div>
               <div class="flex justify-between items-center">
-                <span class="text-indigo-200">{{ d.item.phone }}</span>
+                <span class="text-indigo-200">{{ item.phone }}</span>
                 <span class="hover:underline text-red-300 cursor-pointer">查看详情</span>
               </div>
             </div>

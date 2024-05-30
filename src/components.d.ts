@@ -18,6 +18,7 @@ declare module 'vue' {
     Count: typeof import('./components/Count.vue')['default']
     DebugLayer: typeof import('./components/DebugLayer.vue')['default']
     DecoGrad: typeof import('./components/DecoGrad.vue')['default']
+    DecoGrid: typeof import('./components/DecoGrid.vue')['default']
     DemoTableFoot: typeof import('./components/DemoTableFoot.vue')['default']
     Dropdown: typeof import('./components/Dropdown.vue')['default']
     FormInput: typeof import('./components/FormInput.vue')['default']
