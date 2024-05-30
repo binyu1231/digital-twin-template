@@ -1,0 +1,1 @@
+export { renderer as radarNormalRenderer } from './normal'

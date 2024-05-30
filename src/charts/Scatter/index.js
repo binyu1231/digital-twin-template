@@ -1,0 +1,1 @@
+export { renderer as scatterNormalRenderer } from './normal'

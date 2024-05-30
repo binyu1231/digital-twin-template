@@ -1,0 +1,1 @@
+export { renderer as graphRelationRenderer } from './graph-relation'

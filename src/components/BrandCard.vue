@@ -27,7 +27,7 @@ withDefaults(
 
 
     <div class="flex p-3 pr-6 h-full gap-2">
-      <img :src="`/carousel-icon-0${brandIndex}.svg`" width="56" height="56" alt="Icon 01">
+      <img class="brand-img" :src="`/carousel-icon-0${brandIndex}.svg`" alt="Icon 01">
       <div class="grow">
         <div class="font-bold text-lg mb-1 text-nowrap">{{ title }}</div>
         <GradientColorText class="font-700 text-nowrap">{{ enTitle }}</GradientColorText>
@@ -50,5 +50,9 @@ withDefaults(
   border-gray-700
   overflow-hidden
   bg-slate-900 bg-opacity-60 z-20 overflow-hidden;
+}
+
+.brand-img {
+  @apply w-14 h-14;
 }
 </style>
