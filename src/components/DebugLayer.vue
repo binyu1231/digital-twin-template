@@ -172,8 +172,6 @@ function toggleVisible() {
 .debug-layer {
   @apply 
     fixed
-    w-100
-    h-100
     z-10000;
 }
 
